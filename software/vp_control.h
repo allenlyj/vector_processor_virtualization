@@ -1,14 +1,15 @@
 #include <stdio.h>
 #include <stdlib.h>
-//#define __PLATFORM_H_  // Comment this line when running on standard pc
+//#define __RUN_ON_MB_  // Uncomment this line when running on the real MicroBlaze on Xilinx FPGA
+//#define __MISS_MSG_   // Uncomment this line if you want detailed miss report(will cause lots of msg)
 
 #ifndef AMIN_VP_OP
 #define AMIN_VP_OP
 
-#define __vp_req(length,number) thread_register(length,number,&vp_amin);
-#define __vp_rel(thread_id) thread_release(thread_id,&vp_amin);
-#define __vp_stat vp_stat(&vp_amin);
-#define __vp_init vp_initialize(&vp_amin);
+#define __vp_req(length,number) thread_register(length,number,&vp_amin)
+#define __vp_rel(thread_id) thread_release(thread_id,&vp_amin)
+#define __vp_stat vp_stat(&vp_amin)
+#define __vp_init vp_initialize(&vp_amin)
 
 typedef struct vp_control vp_control;
 typedef struct vp_reg vp_reg;
@@ -49,7 +50,7 @@ struct vp_control
 /* The actual struct containing the shared vp information */
 vp_control vp_amin;
 
-#ifndef __PLATFORM_H_
+#ifndef __RUN_ON_MB_
 /****************************************************************/
 // Display the thread virtual to physical name mapping
 static void vp_tlb(vp_control *vp);

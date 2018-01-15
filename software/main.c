@@ -1,4 +1,4 @@
-#include "vp_control_int.h"
+#include "vp_control.h"
 #include "random_exp.h"
 #include <time.h>
 
@@ -150,5 +150,6 @@ int main(int argc, char* argv[])
 	{
 		printf("\t\t%d",frag_64_time[i]);
 	}
+	printf("\n");
 	return 0;
 }

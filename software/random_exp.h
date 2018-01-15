@@ -2,7 +2,7 @@
 # define __RANDOM_EXP
 # include <stdlib.h>
 # include <stdio.h>
-# include "vp_control_int.h"
+# include "vp_control.h"
 
 typedef struct random_req toss;
 typedef struct fra_state frag_state;
